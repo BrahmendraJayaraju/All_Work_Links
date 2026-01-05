@@ -1,168 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brahmendra Jayaraju | Data Science & Automation</title>
+
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background:
-            radial-gradient(circle at top, rgba(229,9,20,0.35), transparent 55%),
-            linear-gradient(180deg, #000000, #0b0b0b, #140000);
-        min-height: 100vh;
-        padding: 20px;
-        color: #fff;
-        margin: 0;
-        overflow-x: hidden;
-    }
+/* =================== BASE =================== */
+body {
+    font-family: Arial, sans-serif;
+    background: #000;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    color: #fff;
+    overflow-x: hidden;
+}
 
-    /* CINEMATIC ANIMATED GLOW */
-    body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background: linear-gradient(
-            120deg,
-            transparent,
-            rgba(229, 9, 20, 0.18),
-            transparent
-        );
-        animation: glowMove 12s linear infinite;
-        pointer-events: none;
-        z-index: -1;
-    }
+/* =================== CINEMATIC BACKGROUND =================== */
+.cinematic-bg {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(229,9,20,0.35), transparent 45%),
+        radial-gradient(circle at 80% 20%, rgba(255,0,80,0.25), transparent 50%),
+        radial-gradient(circle at 50% 80%, rgba(229,9,20,0.25), transparent 55%),
+        linear-gradient(180deg, #000, #0a0000, #140000);
+    z-index: -5;
+}
 
-    /* SUBTLE FILM GRAIN */
-    body::after {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background-image: url("https://www.transparenttextures.com/patterns/noise.png");
-        opacity: 0.05;
-        pointer-events: none;
-        z-index: -1;
-    }
+/* MOVING LIGHT BEAMS */
+.cinematic-bg::before {
+    content: "";
+    position: absolute;
+    inset: -60%;
+    background: linear-gradient(
+        120deg,
+        transparent 45%,
+        rgba(229,9,20,0.25),
+        transparent 55%
+    );
+    animation: beamMove 18s linear infinite;
+}
 
-    @keyframes glowMove {
-        0% { transform: translateX(-60%); }
-        100% { transform: translateX(60%); }
-    }
+/* FILM GRAIN */
+.cinematic-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://www.transparenttextures.com/patterns/noise.png");
+    opacity: 0.06;
+}
 
-    /* TOP RIGHT CONTACT */
-    .top-contact {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(14px);
-        border-radius: 14px;
-        padding: 14px 18px;
-        text-align: right;
-        box-shadow: 0 10px 35px rgba(229, 9, 20, 0.35);
-        font-size: 13px;
-        z-index: 1000;
-    }
+@keyframes beamMove {
+    0% { transform: translateX(-30%) rotate(0deg); }
+    100% { transform: translateX(30%) rotate(360deg); }
+}
 
-    .top-contact strong {
-        font-size: 15px;
-        display: block;
-        margin-bottom: 4px;
-        background: linear-gradient(to right, #e50914, #ff6a6a);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+/* =================== MOUSE SPOTLIGHT =================== */
+.spotlight {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,0,80,0.35), transparent 60%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: -4;
+}
 
-    .container {
-        max-width: 780px;
-        margin: 90px auto 30px auto;
-        background: rgba(255, 255, 255, 0.10);
-        backdrop-filter: blur(18px);
-        border-radius: 22px;
-        padding: 34px;
-        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85);
-        animation: fadeIn 1.2s ease-in-out;
-    }
+/* =================== TOP CONTACT =================== */
+.top-contact {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(14px);
+    border-radius: 14px;
+    padding: 14px 18px;
+    text-align: right;
+    box-shadow: 0 10px 35px rgba(229,9,20,0.4);
+    font-size: 13px;
+    z-index: 10;
+}
 
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+.top-contact strong {
+    font-size: 15px;
+    background: linear-gradient(to right, #fff, #e50914);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-    h1 {
-        font-size: 28px;
+/* =================== CONTAINER =================== */
+.container {
+    max-width: 780px;
+    margin: 120px auto 40px;
+    padding: 34px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(22px);
+    border-radius: 22px;
+    box-shadow:
+        0 40px 80px rgba(0,0,0,0.9),
+        inset 0 0 50px rgba(229,9,20,0.18);
+    animation: netflixReveal 1.4s ease forwards;
+    transform-style: preserve-3d;
+}
+
+@keyframes netflixReveal {
+    from { opacity: 0; transform: scale(0.95) translateY(40px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* =================== HEADINGS =================== */
+h1 {
+    text-align: center;
+    font-size: 28px;
+    background: linear-gradient(to right, #fff, #e50914);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 35px;
+    color: #ffb3b3;
+}
+
+h3 {
+    text-align: center;
+}
+
+/* =================== NETFLIX TILES =================== */
+.link {
+    display: block;
+    text-align: center;
+    margin: 14px 0;
+    padding: 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    background: linear-gradient(135deg, #e50914, #b00610);
+    box-shadow: 0 10px 28px rgba(229,9,20,0.5);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.5),
+        transparent
+    );
+    transform: translateX(-120%);
+    transition: 0.6s;
+}
+
+.link:hover {
+    transform: scale(1.05);
+}
+
+.link:hover::before {
+    transform: translateX(120%);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ff4d4d, transparent);
+    margin: 40px 0;
+}
+
+/* =================== MOBILE =================== */
+@media(max-width:600px){
+    .top-contact{
+        position: static;
+        margin: 0 auto 20px;
         text-align: center;
-        margin-bottom: 10px;
-        font-weight: bold;
-        background: linear-gradient(to right, #ffffff, #e50914);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
     }
-
-    .subtitle {
-        text-align: center;
-        font-size: 15px;
-        margin-bottom: 30px;
-        opacity: 0.95;
+    .container{
+        margin-top: 30px;
     }
-
-    h2 {
-        font-size: 21px;
-        margin-top: 35px;
-        margin-bottom: 16px;
-        color: #ffb3b3;
-        text-align: center;
-        font-weight: bold;
-    }
-
-    h3 {
-        font-size: 17px;
-        margin-top: 22px;
-        color: #ffffff;
-        text-align: center;
-        font-weight: bold;
-    }
-
-    .link {
-        display: block;
-        text-align: center;
-        margin: 12px 0;
-        padding: 14px;
-        border-radius: 30px;
-        text-decoration: none;
-        color: #fff;
-        font-size: 15px;
-        background: linear-gradient(135deg, #e50914, #b00610);
-        box-shadow: 0 10px 28px rgba(229, 9, 20, 0.45);
-        transition: all 0.3s ease;
-    }
-
-    .link:hover {
-        transform: translateY(-4px) scale(1.03);
-        box-shadow: 0 18px 40px rgba(229, 9, 20, 0.8);
-        background: linear-gradient(135deg, #ffffff, #ffb3b3);
-        color: #000;
-        font-weight: bold;
-    }
-
-    hr {
-        border: none;
-        height: 1px;
-        background: linear-gradient(to right, transparent, #ff4d4d, transparent);
-        margin: 40px 0;
-        opacity: 0.7;
-    }
-
-    footer {
-        margin-top: 35px;
-        text-align: center;
-        font-size: 13px;
-        opacity: 0.85;
-    }
-
-    @media (max-width: 600px) {
-        .top-contact {
-            position: static;
-            margin: 0 auto 20px auto;
-            text-align: center;
-            width: fit-content;
-        }
-        .container {
-            margin-top: 20px;
-        }
-    }
+}
 </style>
+</head>
+
+<body>
+
+<div class="cinematic-bg"></div>
+<div class="spotlight"></div>
+
+<!-- CONTACT -->
+<div class="top-contact">
+    <strong>Brahmendra Jayaraju</strong>
+    📧 brahmendta.jayaraju67@gmail.com<br>
+    📞 +1 302-981-6805<br>
+    📞 +91 98866 03727
+</div>
+
+<div class="container">
+
+<h1>Data Science & Test Automation Portfolio</h1>
+<div class="subtitle">Data Science • UI Automation • API Automation • Analytics</div>
+
+<h2>⚙ Automation Frameworks</h2>
+
+<h3>UI Automation</h3>
+<a class="link" href="https://github.com/BrahmendraJayaraju/ActiTime_UI_Framework.git" target="_blank">ActiTime UI Automation Framework</a>
+<a class="link" href="https://github.com/BrahmendraJayaraju/ActiTime_POM_UI_ExtentReport.git" target="_blank">ActiTime POM Framework with Extent Reports</a>
+
+<h3>API Automation</h3>
+<a class="link" href="https://github.com/BrahmendraJayaraju/Api_Framework.git" target="_blank">API Automation Framework</a>
+
+<h3>Internationalization Testing</h3>
+<a class="link" href="https://github.com/BrahmendraJayaraju/I18N_Test_Framework.git" target="_blank">I18N Language Testing Framework</a>
+
+<hr>
+
+<h2>📊 Data Science & Analytics</h2>
+
+<h3>📊 Kaggle Datasets</h3>
+<a class="link" href="https://www.kaggle.com/datasets/brahmendrajayaraju/u-s-universities-and-colleges-dataset-2025" target="_blank">U.S. Universities & Colleges Dataset (2025)</a>
+<a class="link" href="https://www.kaggle.com/datasets/brahmendrajayaraju/coursera-healthcare-courses-dataset-2025-edition" target="_blank">Coursera Healthcare Courses Dataset (2025)</a>
+
+<h3>📈 Power BI Dashboards</h3>
+<a class="link" href="https://app.powerbi.com/reportEmbed?reportId=1c1da696-9bd5-4027-870c-97c6027e1a31" target="_blank">Power BI Report 1</a>
+<a class="link" href="https://app.powerbi.com/reportEmbed?reportId=0f0c049f-73a8-4f27-811e-01cab772ff3b" target="_blank">Power BI Report 2</a>
+<a class="link" href="https://app.powerbi.com/reportEmbed?reportId=0c9a348c-eedf-4548-b4ff-a1c61a68bb4c" target="_blank">Power BI Report 3</a>
+<a class="link" href="https://app.powerbi.com/reportEmbed?reportId=11cda388-9c04-4be4-80f5-904a81d3cff4" target="_blank">Power BI Report 4</a>
+
+</div>
+
+<script>
+/* MOUSE FOLLOW SPOTLIGHT */
+const spotlight = document.querySelector('.spotlight');
+document.addEventListener('mousemove', e => {
+    spotlight.style.left = e.clientX + 'px';
+    spotlight.style.top = e.clientY + 'px';
+});
+
+/* SCROLL PARALLAX */
+window.addEventListener('scroll', () => {
+    document.querySelector('.container').style.transform =
+        `translateY(${window.scrollY * 0.04}px)`;
+});
+</script>
+
+</body>
+</html>
