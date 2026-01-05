@@ -1,18 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brahmendra Jayaraju | Data Science & Automation</title>
-
 <style>
     body {
         font-family: Arial, sans-serif;
-        background: linear-gradient(135deg, #1d2671, #c33764);
+        background:
+            radial-gradient(circle at top, rgba(229,9,20,0.35), transparent 55%),
+            linear-gradient(180deg, #000000, #0b0b0b, #140000);
         min-height: 100vh;
         padding: 20px;
         color: #fff;
         margin: 0;
+        overflow-x: hidden;
+    }
+
+    /* CINEMATIC ANIMATED GLOW */
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(
+            120deg,
+            transparent,
+            rgba(229, 9, 20, 0.18),
+            transparent
+        );
+        animation: glowMove 12s linear infinite;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    /* SUBTLE FILM GRAIN */
+    body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("https://www.transparenttextures.com/patterns/noise.png");
+        opacity: 0.05;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    @keyframes glowMove {
+        0% { transform: translateX(-60%); }
+        100% { transform: translateX(60%); }
     }
 
     /* TOP RIGHT CONTACT */
@@ -20,12 +48,12 @@
         position: fixed;
         top: 20px;
         right: 20px;
-        background: rgba(255, 255, 255, 0.18);
-        backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(14px);
         border-radius: 14px;
         padding: 14px 18px;
         text-align: right;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 10px 35px rgba(229, 9, 20, 0.35);
         font-size: 13px;
         z-index: 1000;
     }
@@ -34,7 +62,7 @@
         font-size: 15px;
         display: block;
         margin-bottom: 4px;
-        background: linear-gradient(to right, #ffecd2, #fcb69f);
+        background: linear-gradient(to right, #e50914, #ff6a6a);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -42,16 +70,16 @@
     .container {
         max-width: 780px;
         margin: 90px auto 30px auto;
-        background: rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(14px);
+        background: rgba(255, 255, 255, 0.10);
+        backdrop-filter: blur(18px);
         border-radius: 22px;
         padding: 34px;
-        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.45);
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85);
         animation: fadeIn 1.2s ease-in-out;
     }
 
     @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(25px); }
+        from { opacity: 0; transform: translateY(30px); }
         to { opacity: 1; transform: translateY(0); }
     }
 
@@ -60,7 +88,7 @@
         text-align: center;
         margin-bottom: 10px;
         font-weight: bold;
-        background: linear-gradient(to right, #ffecd2, #fcb69f);
+        background: linear-gradient(to right, #ffffff, #e50914);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -76,7 +104,7 @@
         font-size: 21px;
         margin-top: 35px;
         margin-bottom: 16px;
-        color: #ffdde1;
+        color: #ffb3b3;
         text-align: center;
         font-weight: bold;
     }
@@ -98,25 +126,25 @@
         text-decoration: none;
         color: #fff;
         font-size: 15px;
-        background: linear-gradient(135deg, #ff758c, #ff7eb3);
-        box-shadow: 0 8px 20px rgba(255, 118, 150, 0.4);
+        background: linear-gradient(135deg, #e50914, #b00610);
+        box-shadow: 0 10px 28px rgba(229, 9, 20, 0.45);
         transition: all 0.3s ease;
     }
 
     .link:hover {
-        transform: translateY(-4px) scale(1.02);
-        box-shadow: 0 15px 30px rgba(255, 118, 150, 0.7);
-        background: linear-gradient(135deg, #7f7fd5, #86a8e7, #91eae4);
-        color: #1a1a1a;
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 18px 40px rgba(229, 9, 20, 0.8);
+        background: linear-gradient(135deg, #ffffff, #ffb3b3);
+        color: #000;
         font-weight: bold;
     }
 
     hr {
         border: none;
         height: 1px;
-        background: linear-gradient(to right, transparent, #fff, transparent);
+        background: linear-gradient(to right, transparent, #ff4d4d, transparent);
         margin: 40px 0;
-        opacity: 0.6;
+        opacity: 0.7;
     }
 
     footer {
@@ -138,67 +166,3 @@
         }
     }
 </style>
-</head>
-
-<body>
-
-<!-- TOP RIGHT CONTACT -->
-<div class="top-contact">
-    <strong>Brahmendra Jayaraju</strong>
-    📧 brahmendta.jayaraju67@gmail.com<br>
-    📞 +1 302-981-6805<br>
-    📞 +91 98866 03727
-</div>
-
-<div class="container">
-
-    <h1>Data Science & Test Automation Portfolio</h1>
-    <div class="subtitle">
-        Data Science • UI Automation • API Automation • Analytics
-    </div>
-
-    <!-- FRAMEWORKS AT TOP -->
-    <h2>⚙ Automation Frameworks</h2>
-
-    <h3>UI Automation</h3>
-    <a class="link" href="https://github.com/BrahmendraJayaraju/ActiTime_UI_Framework.git" target="_blank">
-        ActiTime UI Automation Framework
-    </a>
-    <a class="link" href="https://github.com/BrahmendraJayaraju/ActiTime_POM_UI_ExtentReport.git" target="_blank">
-        ActiTime POM Framework with Extent Reports
-    </a>
-
-    <h3>API Automation</h3>
-    <a class="link" href="https://github.com/BrahmendraJayaraju/Api_Framework.git" target="_blank">
-        API Automation Framework
-    </a>
-
-    <h3>Internationalization Testing</h3>
-    <a class="link" href="https://github.com/BrahmendraJayaraju/I18N_Test_Framework.git" target="_blank">
-        I18N Language Testing Framework
-    </a>
-
-    <hr>
-
-    <!-- DATA SCIENCE -->
-    <h2>📊 Data Science & Analytics</h2>
-
-    <h3>📊 Kaggle Datasets (Published)</h3>
-    <a class="link" href="https://www.kaggle.com/datasets/brahmendrajayaraju/u-s-universities-and-colleges-dataset-2025" target="_blank">
-        U.S. Universities & Colleges Dataset (2025)
-    </a>
-    <a class="link" href="https://www.kaggle.com/datasets/brahmendrajayaraju/coursera-healthcare-courses-dataset-2025-edition" target="_blank">
-        Coursera Healthcare Courses Dataset (2025)
-    </a>
-
-    <h3>📈 Power BI Dashboards</h3>
-    <a class="link" href="https://app.powerbi.com/reportEmbed?reportId=1c1da696-9bd5-4027-870c-97c6027e1a31" target="_blank">Power BI Report 1</a>
-    <a class="link" href="https://app.powerbi.com/reportEmbed?reportId=0f0c049f-73a8-4f27-811e-01cab772ff3b" target="_blank">Power BI Report 2</a>
-    <a class="link" href="https://app.powerbi.com/reportEmbed?reportId=0c9a348c-eedf-4548-b4ff-a1c61a68bb4c" target="_blank">Power BI Report 3</a>
-    <a class="link" href="https://app.powerbi.com/reportEmbed?reportId=11cda388-9c04-4be4-80f5-904a81d3cff4" target="_blank">Power BI Report 4</a>
-
- 
-
-</div>
-</body>
-</html>
