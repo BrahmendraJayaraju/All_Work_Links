@@ -3,249 +3,197 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brahmendra Jayaraju | Data Science & Automation</title>
+<title>Brahmendra Jayaraju | Portfolio</title>
 
 <style>
 body {
-    font-family: Arial, sans-serif;
-    background: #000;
-    color: #fff;
     margin: 0;
-    padding: 20px;
-    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: #fff;
 }
 
-/* ===== CINEMATIC BACKGROUND ===== */
-.cinematic-bg {
-    position: fixed;
-    inset: 0;
-    background:
-        radial-gradient(circle at 20% 10%, rgba(229,9,20,0.35), transparent 45%),
-        radial-gradient(circle at 80% 30%, rgba(255,0,80,0.25), transparent 55%),
-        linear-gradient(180deg, #000, #0a0000, #140000);
-    z-index: -3;
-}
-
-.cinematic-bg::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("https://www.transparenttextures.com/patterns/noise.png");
-    opacity: 0.06;
-}
-
-/* ===== TOP CONTACT ===== */
-.top-contact {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(14px);
-    padding: 14px 18px;
-    border-radius: 14px;
-    font-size: 13px;
-    box-shadow: 0 10px 35px rgba(229,9,20,0.4);
-    z-index: 5;
-    text-align: right;
-}
-
-.top-contact strong {
-    font-size: 15px;
-    background: linear-gradient(to right, #fff, #e50914);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* ===== CONTAINER ===== */
 .container {
-    max-width: 1000px;
-    margin: 120px auto 40px;
-    padding: 34px;
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(22px);
-    border-radius: 22px;
-    box-shadow: 0 40px 80px rgba(0,0,0,0.9);
+    padding: 30px;
 }
 
 h1 {
     text-align: center;
-    font-size: 28px;
-    background: linear-gradient(to right, #fff, #e50914);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 26px;
+    margin-bottom: 40px;
 }
 
-.subtitle {
-    text-align: center;
-    margin-bottom: 35px;
-    opacity: 0.9;
+.section {
+    margin-bottom: 40px;
 }
 
-h2 {
-    text-align: center;
-    margin: 40px 0 20px;
-    color: #ffb3b3;
+.section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
 }
 
-h3 {
-    margin: 25px 0 15px;
-    text-align: center;
+.row {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding-bottom: 10px;
 }
 
-/* ===== NETFLIX TILES ===== */
-.tiles {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 22px;
-}
-
-.tile {
+.card {
     position: relative;
-    height: 170px;
-    border-radius: 14px;
-    text-decoration: none;
+    min-width: 260px;
+    height: 150px;
+    border-radius: 10px;
     overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.85);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+    transition: transform 0.35s ease;
 }
 
-.tile::before {
-    content: "";
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card:hover {
+    transform: scale(1.15);
+    z-index: 10;
+}
+
+.overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,0.9),
-        rgba(0,0,0,0.2)
-    );
-    z-index: 1;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    display: flex;
+    align-items: flex-end;
+    padding: 12px;
 }
 
-.tile::after {
-    content: "";
-    position: absolute;
-    inset: -50%;
-    background: radial-gradient(circle, rgba(229,9,20,0.45), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.4s;
+.overlay span {
+    font-size: 14px;
+    font-weight: bold;
 }
 
-.tile:hover {
-    transform: scale(1.1);
-    z-index: 4;
-    box-shadow: 0 30px 70px rgba(229,9,20,0.7);
-}
-
-.tile:hover::after {
-    opacity: 1;
-}
-
-.tile-content {
-    position: absolute;
-    bottom: 14px;
-    left: 14px;
-    right: 14px;
-    z-index: 2;
-}
-
-.tile-content h4 {
-    margin: 0;
-    font-size: 16px;
-    color: #fff;
-}
-
-.tile-content p {
-    margin-top: 6px;
-    font-size: 12px;
-    color: #ffb3b3;
-}
-
-/* ===== MOBILE ===== */
-@media(max-width:600px){
-    .top-contact {
-        position: static;
-        margin: 0 auto 20px;
-        text-align: center;
-    }
+a {
+    text-decoration: none;
+    color: white;
 }
 </style>
 </head>
 
 <body>
-
-<div class="cinematic-bg"></div>
-
-<div class="top-contact">
-    <strong>Brahmendra Jayaraju</strong>
-    📧 brahmendta.jayaraju67@gmail.com<br>
-    📞 +1 302-981-6805<br>
-    📞 +91 98866 03727
-</div>
-
 <div class="container">
 
-<h1>Data Science & Test Automation Portfolio</h1>
-<div class="subtitle">Data Science • UI Automation • API Automation • Analytics</div>
+<h1>🎬 Data, BI & Automation Portfolio</h1>
 
+<!-- Kaggle -->
+<div class="section">
+<h2>📊 Kaggle Datasets (Published)</h2>
+<div class="row">
+
+<a href="https://www.kaggle.com/datasets/brahmendrajayaraju/u-s-universities-and-colleges-dataset-2025" target="_blank">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1">
+<div class="overlay"><span>US Universities Dataset</span></div>
+</div>
+</a>
+
+<a href="https://www.kaggle.com/datasets/brahmendrajayaraju/coursera-healthcare-courses-dataset-2025-edition" target="_blank">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1580281657527-47f249e8f6c5">
+<div class="overlay"><span>Healthcare Courses Dataset</span></div>
+</div>
+</a>
+
+</div>
+</div>
+
+<!-- Power BI -->
+<div class="section">
+<h2>📈 Power BI Dashboards</h2>
+<div class="row">
+
+<a href="https://app.powerbi.com/reportEmbed?reportId=1c1da696-9bd5-4027-870c-97c6027e1a31" target="_blank">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+<div class="overlay"><span>Power BI Report 1</span></div>
+</div>
+</a>
+
+<a href="https://app.powerbi.com/reportEmbed?reportId=0f0c049f-73a8-4f27-811e-01cab772ff3b" target="_blank">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1556155092-8707de31f9c4">
+<div class="overlay"><span>Power BI Report 2</span></div>
+</div>
+</a>
+
+<a href="https://app.powerbi.com/reportEmbed?reportId=0c9a348c-eedf-4548-b4ff-a1c61a68bb4c" target="_blank">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+<div class="overlay"><span>Power BI Report 3</span></div>
+</div>
+</a>
+
+<a href="https://app.powerbi.com/reportEmbed?reportId=11cda388-9c04-4be4-80f5-904a81d3cff4" target="_blank">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72">
+<div class="overlay"><span>Power BI Report 4</span></div>
+</div>
+</a>
+
+</div>
+</div>
+
+<!-- Automation -->
+<div class="section">
 <h2>⚙ Automation Frameworks</h2>
+<div class="row">
 
-<h3>UI Automation</h3>
-<div class="tiles">
-<a class="tile" href="https://github.com/BrahmendraJayaraju/ActiTime_UI_Framework.git" target="_blank"
-style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475')">
-<div class="tile-content"><h4>ActiTime UI Automation</h4><p>Selenium • Java • TestNG</p></div>
+<a href="https://github.com/BrahmendraJayaraju/ActiTime_UI_Framework.git" target="_blank">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+<div class="overlay"><span>UI Automation Framework</span></div>
+</div>
 </a>
 
-<a class="tile" href="https://github.com/BrahmendraJayaraju/ActiTime_POM_UI_ExtentReport.git" target="_blank"
-style="background-image:url('https://images.unsplash.com/photo-1517433456452-f9633a875f6f')">
-<div class="tile-content"><h4>POM + Extent Reports</h4><p>Page Object Model</p></div>
+<a href="https://github.com/BrahmendraJayaraju/Api_Framework.git" target="_blank">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+<div class="overlay"><span>API Automation Framework</span></div>
+</div>
 </a>
+
+</div>
 </div>
 
-<h3>API Automation</h3>
-<div class="tiles">
-<a class="tile" href="https://github.com/BrahmendraJayaraju/Api_Framework.git" target="_blank"
-style="background-image:url('https://images.unsplash.com/photo-1555949963-aa79dcee981c')">
-<div class="tile-content"><h4>API Automation</h4><p>REST • Java</p></div>
+<!-- I18N -->
+<div class="section">
+<h2>🌍 Internationalization Testing</h2>
+<div class="row">
+
+<a href="https://github.com/BrahmendraJayaraju/I18N_Test_Framework.git" target="_blank">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df">
+<div class="overlay"><span>I18N Language Testing</span></div>
+</div>
 </a>
+
+</div>
 </div>
 
-<h3>Internationalization Testing</h3>
-<div class="tiles">
-<a class="tile" href="https://github.com/BrahmendraJayaraju/I18N_Test_Framework.git" target="_blank"
-style="background-image:url('https://images.unsplash.com/photo-1526378722443-4d8ecf77b99f')">
-<div class="tile-content"><h4>I18N Testing</h4><p>Localization</p></div>
-</a>
+<!-- POM -->
+<div class="section">
+<h2>🧩 POM + Extent Reports</h2>
+<div class="row">
+
+<a href="https://github.com/BrahmendraJayaraju/ActiTime_POM_UI_ExtentReport.git" target="_blank">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
+<div class="overlay"><span>POM UI + Extent Reports</span></div>
 </div>
-
-<h2>📊 Data Science & Analytics</h2>
-
-<h3>Kaggle Datasets</h3>
-<div class="tiles">
-<a class="tile" href="https://www.kaggle.com/datasets/brahmendrajayaraju/u-s-universities-and-colleges-dataset-2025" target="_blank"
-style="background-image:url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b')">
-<div class="tile-content"><h4>US Universities Dataset</h4><p>Kaggle</p></div>
 </a>
 
-<a class="tile" href="https://www.kaggle.com/datasets/brahmendrajayaraju/coursera-healthcare-courses-dataset-2025-edition" target="_blank"
-style="background-image:url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528')">
-<div class="tile-content"><h4>Healthcare Courses</h4><p>Analytics</p></div>
-</a>
 </div>
-
-<h3>Power BI Dashboards</h3>
-<div class="tiles">
-<a class="tile" href="https://app.powerbi.com/reportEmbed?reportId=1c1da696-9bd5-4027-870c-97c6027e1a31" target="_blank"
-style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71')">
-<div class="tile-content"><h4>Power BI Report 1</h4><p>Dashboard</p></div>
-</a>
-
-<a class="tile" href="https://app.powerbi.com/reportEmbed?reportId=0f0c049f-73a8-4f27-811e-01cab772ff3b" target="_blank"
-style="background-image:url('https://images.unsplash.com/photo-1543286386-713bdd548da4')">
-<div class="tile-content"><h4>Power BI Report 2</h4><p>Insights</p></div>
-</a>
 </div>
 
 </div>
