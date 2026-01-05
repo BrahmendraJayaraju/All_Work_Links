@@ -1,34 +1,283 @@
-<div class="section">
-<h2>📈 Power BI Dashboards</h2>
-<div class="row">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brahmendra Jayaraju | Data Science & Automation</title>
 
-<a href="https://app.powerbi.com/reportEmbed?reportId=1c1da696-9bd5-4027-870c-97c6027e1a31" target="_blank">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80">
-<div class="overlay"><span>Power BI Report 1</span></div>
+<style>
+/* ================= BASE ================= */
+body {
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* ================= CINEMATIC BACKGROUND ================= */
+.cinematic-bg {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(229,9,20,0.35), transparent 45%),
+        radial-gradient(circle at 80% 30%, rgba(255,0,80,0.25), transparent 55%),
+        linear-gradient(180deg, #000, #0a0000, #140000);
+    z-index: -3;
+}
+
+.cinematic-bg::before {
+    content: "";
+    position: absolute;
+    inset: -60%;
+    background: linear-gradient(
+        120deg,
+        transparent 45%,
+        rgba(229,9,20,0.25),
+        transparent 55%
+    );
+    animation: move 18s linear infinite;
+}
+
+.cinematic-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://www.transparenttextures.com/patterns/noise.png");
+    opacity: 0.06;
+}
+
+@keyframes move {
+    0% { transform: translateX(-30%) rotate(0deg); }
+    100% { transform: translateX(30%) rotate(360deg); }
+}
+
+/* ================= TOP CONTACT ================= */
+.top-contact {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(14px);
+    padding: 14px 18px;
+    border-radius: 14px;
+    font-size: 13px;
+    box-shadow: 0 10px 35px rgba(229,9,20,0.4);
+    z-index: 5;
+    text-align: right;
+}
+
+.top-contact strong {
+    font-size: 15px;
+    background: linear-gradient(to right, #fff, #e50914);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    max-width: 900px;
+    margin: 120px auto 40px;
+    padding: 34px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(22px);
+    border-radius: 22px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.9);
+}
+
+/* ================= HEADINGS ================= */
+h1 {
+    text-align: center;
+    font-size: 28px;
+    background: linear-gradient(to right, #fff, #e50914);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 35px;
+    opacity: 0.9;
+}
+
+h2 {
+    text-align: center;
+    margin: 40px 0 20px;
+    color: #ffb3b3;
+}
+
+h3 {
+    margin: 25px 0 15px;
+    text-align: center;
+}
+
+/* ================= NETFLIX TILE GRID ================= */
+.tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+/* TILE */
+.tile {
+    position: relative;
+    height: 150px;
+    border-radius: 14px;
+    text-decoration: none;
+    background:
+        linear-gradient(135deg, #1a1a1a, #0b0b0b),
+        radial-gradient(circle at top, rgba(229,9,20,0.25), transparent 60%);
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.tile::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.9),
+        rgba(0,0,0,0.25)
+    );
+}
+
+.tile::after {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(circle, rgba(229,9,20,0.45), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.tile:hover {
+    transform: scale(1.1);
+    z-index: 3;
+    box-shadow: 0 30px 70px rgba(229,9,20,0.7);
+}
+
+.tile:hover::after {
+    opacity: 1;
+}
+
+/* TILE CONTENT */
+.tile-content {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    z-index: 2;
+}
+
+.tile-content h4 {
+    margin: 0;
+    font-size: 15px;
+    color: #fff;
+}
+
+.tile-content p {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #ffb3b3;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:600px){
+    .top-contact {
+        position: static;
+        margin: 0 auto 20px;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="cinematic-bg"></div>
+
+<!-- CONTACT -->
+<div class="top-contact">
+    <strong>Brahmendra Jayaraju</strong>
+    📧 brahmendta.jayaraju67@gmail.com<br>
+    📞 +1 302-981-6805<br>
+    📞 +91 98866 03727
 </div>
+
+<div class="container">
+
+<h1>Data Science & Test Automation Portfolio</h1>
+<div class="subtitle">Data Science • UI Automation • API Automation • Analytics</div>
+
+<h2>⚙ Automation Frameworks</h2>
+
+<h3>UI Automation</h3>
+<div class="tiles">
+<a class="tile" href="https://github.com/BrahmendraJayaraju/ActiTime_UI_Framework.git" target="_blank">
+    <div class="tile-content">
+        <h4>ActiTime UI Automation</h4>
+        <p>Selenium • Java • TestNG</p>
+    </div>
 </a>
 
-<a href="https://app.powerbi.com/reportEmbed?reportId=0f0c049f-73a8-4f27-811e-01cab772ff3b" target="_blank">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1556155092-8707de31f9c4?auto=format&fit=crop&w=800&q=80">
-<div class="overlay"><span>Power BI Report 2</span></div>
+<a class="tile" href="https://github.com/BrahmendraJayaraju/ActiTime_POM_UI_ExtentReport.git" target="_blank">
+    <div class="tile-content">
+        <h4>ActiTime POM Framework</h4>
+        <p>POM • Extent Reports</p>
+    </div>
+</a>
 </div>
+
+<h3>API Automation</h3>
+<div class="tiles">
+<a class="tile" href="https://github.com/BrahmendraJayaraju/Api_Framework.git" target="_blank">
+    <div class="tile-content">
+        <h4>API Automation Framework</h4>
+        <p>REST • Java • Automation</p>
+    </div>
+</a>
+</div>
+
+<h3>Internationalization Testing</h3>
+<div class="tiles">
+<a class="tile" href="https://github.com/BrahmendraJayaraju/I18N_Test_Framework.git" target="_blank">
+    <div class="tile-content">
+        <h4>I18N Testing Framework</h4>
+        <p>Localization • Multi-Language</p>
+    </div>
+</a>
+</div>
+
+<h2>📊 Data Science & Analytics</h2>
+
+<h3>Kaggle Datasets</h3>
+<div class="tiles">
+<a class="tile" href="https://www.kaggle.com/datasets/brahmendrajayaraju/u-s-universities-and-colleges-dataset-2025" target="_blank">
+    <div class="tile-content">
+        <h4>US Universities Dataset</h4>
+        <p>Kaggle • Data Analysis</p>
+    </div>
 </a>
 
-<a href="https://app.powerbi.com/reportEmbed?reportId=0c9a348c-eedf-4548-b4ff-a1c61a68bb4c" target="_blank">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80">
-<div class="overlay"><span>Power BI Report 3</span></div>
-</div>
+<a class="tile" href="https://www.kaggle.com/datasets/brahmendrajayaraju/coursera-healthcare-courses-dataset-2025-edition" target="_blank">
+    <div class="tile-content">
+        <h4>Healthcare Courses Dataset</h4>
+        <p>Healthcare • Analytics</p>
+    </div>
 </a>
+</div>
 
-<a href="https://app.powerbi.com/reportEmbed?reportId=11cda388-9c04-4be4-80f5-904a81d3cff4" target="_blank">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=800&q=80">
-<div class="overlay"><span>Power BI Report 4</span></div>
+<h3>Power BI Dashboards</h3>
+<div class="tiles">
+<a class="tile" href="https://app.powerbi.com/reportEmbed?reportId=1c1da696-9bd5-4027-870c-97c6027e1a31" target="_blank"><div class="tile-content"><h4>Power BI Report 1</h4><p>Visualization</p></div></a>
+<a class="tile" href="https://app.powerbi.com/reportEmbed?reportId=0f0c049f-73a8-4f27-811e-01cab772ff3b" target="_blank"><div class="tile-content"><h4>Power BI Report 2</h4><p>Insights</p></div></a>
+<a class="tile" href="https://app.powerbi.com/reportEmbed?reportId=0c9a348c-eedf-4548-b4ff-a1c61a68bb4c" target="_blank"><div class="tile-content"><h4>Power BI Report 3</h4><p>Analytics</p></div></a>
+<a class="tile" href="https://app.powerbi.com/reportEmbed?reportId=11cda388-9c04-4be4-80f5-904a81d3cff4" target="_blank"><div class="tile-content"><h4>Power BI Report 4</h4><p>Dashboard</p></div></a>
 </div>
-</a>
 
 </div>
-</div>
+</body>
+</html>
