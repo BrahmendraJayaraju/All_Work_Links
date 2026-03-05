@@ -1,309 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Brahmendra Jayaraju | Data Science & Automation</title>
 
 <style>
-body {
+  body{
     font-family: Arial, sans-serif;
-    background: #000;
-    color: #fff;
-    margin: 0;
-    padding: 20px;
-    overflow-x: hidden;
-}
+    background:#000;
+    color:#fff;
+    margin:0;
+    padding:20px;
+    overflow-x:hidden;
+  }
 
-.cinematic-bg {
-    position: fixed;
-    inset: 0;
+  .cinematic-bg{
+    position:fixed;
+    inset:0;
     background:
-        radial-gradient(circle at 20% 10%, rgba(229,9,20,0.35), transparent 45%),
-        radial-gradient(circle at 80% 30%, rgba(255,0,80,0.25), transparent 55%),
-        linear-gradient(180deg, #000, #0a0000, #140000);
-    z-index: -3;
-}
+      radial-gradient(circle at 20% 10%, rgba(229,9,20,0.35), transparent 45%),
+      radial-gradient(circle at 80% 30%, rgba(255,0,80,0.25), transparent 55%),
+      linear-gradient(180deg, #000, #0a0000, #140000);
+    z-index:-3;
+  }
 
-.container {
-    max-width: 900px;
-    margin: 120px auto 40px;
-    padding: 34px;
-    background: rgba(255,255,255,0.08);
+  .container{
+    max-width:900px;
+    margin:120px auto 40px;
+    padding:34px;
+    background:rgba(255,255,255,0.08);
     backdrop-filter: blur(22px);
-    border-radius: 22px;
-    box-shadow: 0 40px 80px rgba(0,0,0,0.9);
-}
+    border-radius:22px;
+    box-shadow:0 40px 80px rgba(0,0,0,0.9);
+  }
 
-.top-contact {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: rgba(255,255,255,0.12);
+  .top-contact{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:rgba(255,255,255,0.12);
     backdrop-filter: blur(14px);
-    padding: 14px 18px;
-    border-radius: 14px;
-    font-size: 13px;
-    box-shadow: 0 10px 35px rgba(229,9,20,0.4);
-    z-index: 5;
-    text-align: right;
-}
+    padding:14px 18px;
+    border-radius:14px;
+    font-size:13px;
+    box-shadow:0 10px 35px rgba(229,9,20,0.4);
+    z-index:5;
+    text-align:right;
+  }
 
-.top-contact strong {
-    font-size: 15px;
-    background: linear-gradient(to right, #fff, #e50914);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+  .top-contact strong{
+    font-size:15px;
+    background:linear-gradient(to right, #fff, #e50914);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
 
-h1 {
-    text-align: center;
-    font-size: 28px;
-    background: linear-gradient(to right, #fff, #e50914);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+  h1{
+    text-align:center;
+    font-size:28px;
+    background:linear-gradient(to right, #fff, #e50914);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-top:0;
+  }
 
-.subtitle {
-    text-align: center;
-    margin-bottom: 35px;
-    opacity: 0.9;
-}
+  .subtitle{
+    text-align:center;
+    margin-bottom:35px;
+    opacity:0.9;
+  }
 
-h2 {
-    text-align: center;
-    margin: 40px 0 20px;
-    color: #ffb3b3;
-}
+  h2{
+    text-align:center;
+    margin:40px 0 20px;
+    color:#ffb3b3;
+  }
 
-h3 {
-    margin: 25px 0 15px;
-    text-align: center;
-}
+  h3{
+    margin:25px 0 15px;
+    text-align:center;
+  }
 
-.tiles {
-    display: grid;
+  .tiles{
+    display:grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 22px;
-}
+    gap:22px;
+    margin-bottom:10px;
+  }
 
-.tile {
-    position: relative;
-    height: 150px;
-    border-radius: 14px;
-    text-decoration: none;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+  .tile{
+    position:relative;
+    height:150px;
+    border-radius:14px;
+    text-decoration:none;
+    background-size:cover;
+    background-position:center;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,0.8);
     transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
+  }
 
-.tile::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.35));
-}
+  .tile::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.35));
+  }
 
-.tile:hover {
-    transform: scale(1.1);
-    z-index: 3;
-    box-shadow: 0 30px 70px rgba(229,9,20,0.7);
-}
+  .tile:hover{
+    transform:scale(1.07);
+    z-index:3;
+    box-shadow:0 30px 70px rgba(229,9,20,0.7);
+  }
 
-.tile-content {
-    position: absolute;
-    bottom: 14px;
-    left: 14px;
-    right: 14px;
-    z-index: 2;
-}
+  .tile-content{
+    position:absolute;
+    bottom:14px;
+    left:14px;
+    right:14px;
+    z-index:2;
+  }
 
-.tile-content h4 {
-    margin: 0;
-    font-size: 15px;
-    color: #ffffff;
-}
+  .tile-content h4{
+    margin:0;
+    font-size:15px;
+    color:#fff;
+  }
 
-.tile-content p {
-    margin-top: 6px;
-    font-size: 12px;
-    color: #ffffff;
-    opacity: 0.9;
-}
+  .tile-content p{
+    margin-top:6px;
+    font-size:12px;
+    color:#fff;
+    opacity:0.9;
+  }
 
-@media(max-width:600px){
-    .top-contact {
-        position: static;
-        margin-bottom: 20px;
-        text-align: center;
+  @media(max-width:600px){
+    .top-contact{
+      position:static;
+      margin-bottom:20px;
+      text-align:center;
     }
-}
+    .container{
+      margin:20px auto 40px;
+    }
+  }
 </style>
 </head>
 
 <body>
-
 <div class="cinematic-bg"></div>
 
 <div class="top-contact">
-    <strong>Brahmendra Jayaraju</strong><br>
-    📧 brahmendra.jayaraju67@gmail.com<br>
-    📞 +1 302-981-6805<br>
-    📞 +91 98866 03727
+  <strong>Brahmendra Jayaraju</strong><br />
+  📧 brahmendra.jayaraju67@gmail.com<br />
+  📞 +1 302-981-6805<br />
+  📞 +91 98866 03727
 </div>
 
 <div class="container">
+  <h1>Data Science & Test Automation Portfolio</h1>
+  <div class="subtitle">Data Science • UI Automation • API Automation • Analytics</div>
 
-<h1>Data Science & Test Automation Portfolio</h1>
-<div class="subtitle">Data Science • UI Automation • API Automation • Analytics</div>
+  <h2>⚙ Automation Frameworks</h2>
 
-<h2>⚙ Automation Frameworks</h2>
+  <h3>Mobile Automation (In progress)</h3>
+  <div class="tiles">
+    <a class="tile"
+      style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/3/32/BrowserStack_Logo.png'); background-size:contain; background-repeat:no-repeat; background-color:#111;"
+      href="https://github.com/BrahmendraJayaraju/Cucumber_BDD_JUNIT_Appium.git"
+      target="_blank">
+      <div class="tile-content">
+        <h4>Mobile Automation - Appium</h4>
+        <p>Java • Cucumber BDD • JUnit • BrowserStack Cloud</p>
+      </div>
+    </a>
+  </div>
 
-<h3>UI Automation</h3>
-<div class="tiles">
-
-<h3>Mobile Automation(In progress)</h3>
-
-<div class="tiles">
-
-<a class="tile"
-style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/3/32/BrowserStack_Logo.png'); background-size:contain; background-repeat:no-repeat; background-color:#111;"
-href="https://github.com/BrahmendraJayaraju/Cucumber_BDD_JUNIT_Appium.git"
-target="_blank">
-<div class="tile-content">
-<h4>Mobile Automation - Appium</h4>
-<p>Java • Cucumber BDD • JUnit • BrowserStack Cloud</p>
-</div>
-</a>    
-
-<!-- ✅ NEW PLAYWRIGHT TILE (ADDED AT BEGINNING) -->
-<a class="tile"
-   style="background-image:url('https://images.unsplash.com/photo-1517433456452-f9633a875f6f');"
-   href="https://github.com/BrahmendraJayaraju/PythonPlaywright.git"
-   target="_blank">
-    <div class="tile-content">
+  <h3>UI Automation</h3>
+  <div class="tiles">
+    <a class="tile"
+      style="background-image:url('https://images.unsplash.com/photo-1517433456452-f9633a875f6f');"
+      href="https://github.com/BrahmendraJayaraju/PythonPlaywright.git"
+      target="_blank">
+      <div class="tile-content">
         <h4>Pytest Python Playwright</h4>
         <p>Pytest • Python • Playwright • Allure Reporting</p>
-    </div>
-</a>
+      </div>
+    </a>
 
-<a class="tile"
-   style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475');"
-   href="https://github.com/BrahmendraJayaraju/ActiTime_UI_Framework.git"
-   target="_blank">
-    <div class="tile-content">
+    <a class="tile"
+      style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475');"
+      href="https://github.com/BrahmendraJayaraju/ActiTime_UI_Framework.git"
+      target="_blank">
+      <div class="tile-content">
         <h4>HybridFramework UI Automation</h4>
         <p>Selenium • Java • TestNG</p>
-    </div>
-</a>
+      </div>
+    </a>
 
-<a class="tile"
-   style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c');"
-   href="https://github.com/BrahmendraJayaraju/ActiTime_POM_UI_ExtentReport.git"
-   target="_blank">
-    <div class="tile-content">
+    <a class="tile"
+      style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c');"
+      href="https://github.com/BrahmendraJayaraju/ActiTime_POM_UI_ExtentReport.git"
+      target="_blank">
+      <div class="tile-content">
         <h4>POM UI Framework with ExtentReport</h4>
         <p>Selenium • Java • TestNG</p>
-    </div>
-</a>
+      </div>
+    </a>
+  </div>
 
-</div>
-
-<h3>API Automation</h3>
-<div class="tiles">
-<a class="tile"
-   style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31');"
-   href="https://github.com/BrahmendraJayaraju/API_GIT.git"
-   target="_blank">
-    <div class="tile-content">
+  <h3>API Automation</h3>
+  <div class="tiles">
+    <a class="tile"
+      style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31');"
+      href="https://github.com/BrahmendraJayaraju/API_GIT.git"
+      target="_blank">
+      <div class="tile-content">
         <h4>API Automation Framework</h4>
         <p>REST • Java</p>
-    </div>
-</a>
-</div>
+      </div>
+    </a>
+  </div>
 
-<h3>Internationalization Testing</h3>
-<div class="tiles">
-<a class="tile"
-   style="background-image:url('https://images.unsplash.com/photo-1526378722484-cc5c510a04d0');"
-   href="https://github.com/BrahmendraJayaraju/I18N_Test_Framework.git"
-   target="_blank">
-    <div class="tile-content">
+  <h3>Internationalization Testing</h3>
+  <div class="tiles">
+    <a class="tile"
+      style="background-image:url('https://images.unsplash.com/photo-1526378722484-cc5c510a04d0');"
+      href="https://github.com/BrahmendraJayaraju/I18N_Test_Framework.git"
+      target="_blank">
+      <div class="tile-content">
         <h4>I18N Testing Framework</h4>
         <p>Localization • Multi-Language</p>
-    </div>
-</a>
-</div>
+      </div>
+    </a>
+  </div>
 
-<h2>📊 Data Science & Analytics</h2>
+  <h2>📊 Data Science & Analytics</h2>
 
-<h3>Kaggle Published Datasets</h3>
-<div class="tiles">
-<a class="tile"
-   style="background-image:url('https://images.unsplash.com/photo-1508385082359-f38ae991e8f2');"
-   href="https://www.kaggle.com/datasets/brahmendrajayaraju/u-s-universities-and-colleges-dataset-2025"
-   target="_blank">
-    <div class="tile-content">
+  <h3>Kaggle Published Datasets</h3>
+  <div class="tiles">
+    <a class="tile"
+      style="background-image:url('https://images.unsplash.com/photo-1508385082359-f38ae991e8f2');"
+      href="https://www.kaggle.com/datasets/brahmendrajayaraju/u-s-universities-and-colleges-dataset-2025"
+      target="_blank">
+      <div class="tile-content">
         <h4>US Universities Dataset</h4>
         <p>Kaggle • Data Analysis</p>
-    </div>
-</a>
+      </div>
+    </a>
 
-<a class="tile"
-   style="background-image:url('https://images.unsplash.com/photo-1581091870627-3c4c6c9a6a45');"
-   href="https://www.kaggle.com/datasets/brahmendrajayaraju/coursera-healthcare-courses-dataset-2025-edition"
-   target="_blank">
-    <div class="tile-content">
+    <a class="tile"
+      style="background-image:url('https://images.unsplash.com/photo-1581091870627-3c4c6c9a6a45');"
+      href="https://www.kaggle.com/datasets/brahmendrajayaraju/coursera-healthcare-courses-dataset-2025-edition"
+      target="_blank">
+      <div class="tile-content">
         <h4>Healthcare Courses Dataset</h4>
         <p>Healthcare • Analytics</p>
-    </div>
-</a>
-</div>
+      </div>
+    </a>
+  </div>
 
-<h3>Power BI Dashboards</h3>
-<div class="tiles">
-<a class="tile"
-   style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71');"
-   href="https://app.powerbi.com/view?r=eyJrIjoiYzFlYTlmOGEtNWI4ZS00ZDg0LThjNzktZDQ2MWNhZjNlMWVhIiwidCI6IjUwYWEyNjZjLWI4YjQtNGYxMy1hYWI5LWJlNWEzYmM4NzBlMyIsImMiOjZ9"
-   target="_blank">
-    <div class="tile-content">
+  <h3>Power BI Dashboards</h3>
+  <div class="tiles">
+    <a class="tile"
+      style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71');"
+      href="https://app.powerbi.com/view?r=eyJrIjoiYzFlYTlmOGEtNWI4ZS00ZDg0LThjNzktZDQ2MWNhZjNlMWVhIiwidCI6IjUwYWEyNjZjLWI4YjQtNGYxMy1hYWI5LWJlNWEzYmM4NzBlMyIsImMiOjZ9"
+      target="_blank">
+      <div class="tile-content">
         <h4>Officesupply PowerBI Report</h4>
         <p>Visualization</p>
-    </div>
-</a>
+      </div>
+    </a>
 
-<a class="tile"
-   style="background-image:url('https://images.unsplash.com/photo-1556155092-8707de31f9c4');"
-   href="https://app.powerbi.com/view?r=eyJrIjoiMmVkZjBhYTEtNDU1Ny00OTJlLTg3OTgtMjRlYjYzMTkyZDdiIiwidCI6IjUwYWEyNjZjLWI4YjQtNGYxMy1hYWI5LWJlNWEzYmM4NzBlMyIsImMiOjZ9"
-   target="_blank">
-    <div class="tile-content">
+    <a class="tile"
+      style="background-image:url('https://images.unsplash.com/photo-1556155092-8707de31f9c4');"
+      href="https://app.powerbi.com/view?r=eyJrIjoiMmVkZjBhYTEtNDU1Ny00OTJlLTg3OTgtMjRlYjYzMTkyZDdiIiwidCI6IjUwYWEyNjZjLWI4YjQtNGYxMy1hYWI5LWJlNWEzYmM4NzBlMyIsImMiOjZ9"
+      target="_blank">
+      <div class="tile-content">
         <h4>Sales & Bank PowerBI Report</h4>
         <p>Insights</p>
-    </div>
-</a>
+      </div>
+    </a>
 
-<a class="tile"
-   style="background-image:url('https://images.unsplash.com/photo-1543286386-713bdd548da4');"
-   href="https://app.powerbi.com/view?r=eyJrIjoiZGVmMTAyZWItYWU5NS00NGRkLWIzNzMtZWU5MGRjNjUwZjBkIiwidCI6IjUwYWEyNjZjLWI4YjQtNGYxMy1hYWI5LWJlNWEzYmM4NzBlMyIsImMiOjZ9"
-   target="_blank">
-    <div class="tile-content">
+    <a class="tile"
+      style="background-image:url('https://images.unsplash.com/photo-1543286386-713bdd548da4');"
+      href="https://app.powerbi.com/view?r=eyJrIjoiZGVmMTAyZWItYWU5NS00NGRkLWIzNzMtZWU5MGRjNjUwZjBkIiwidCI6IjUwYWEyNjZjLWI4YjQtNGYxMy1hYWI5LWJlNWEzYmM4NzBlMyIsImMiOjZ9"
+      target="_blank">
+      <div class="tile-content">
         <h4>Car Sales Analysis</h4>
         <p>Analytics</p>
-    </div>
-</a>
+      </div>
+    </a>
 
-<a class="tile"
-   style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d');"
-   href="https://app.powerbi.com/reportEmbed?reportId=22c3ab83-8cad-440a-ba75-d91d4e430009&autoAuth=true&ctid=50aa266c-b8b4-4f13-aab9-be5a3bc870e3"
-   target="_blank">
-    <div class="tile-content">
+    <a class="tile"
+      style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d');"
+      href="https://app.powerbi.com/reportEmbed?reportId=22c3ab83-8cad-440a-ba75-d91d4e430009&autoAuth=true&ctid=50aa266c-b8b4-4f13-aab9-be5a3bc870e3"
+      target="_blank">
+      <div class="tile-content">
         <h4>Airline PowerBI Report</h4>
         <p>Dashboard</p>
-    </div>
-</a>
-</div>
+      </div>
+    </a>
+  </div>
 
 </div>
 </body>
